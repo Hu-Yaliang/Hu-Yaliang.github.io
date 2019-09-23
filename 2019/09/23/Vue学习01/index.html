@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Vue学习01 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。  Vue框架的基本介绍 什么是Vue.js  为什么要学习框架  框架和类库的区别  MVC模式与MVVM模式的区别（补充说明） 具体内容请点击展开全文">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习01">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/Vue学习01/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。  Vue框架的基本介绍 什么是Vue.js  为什么要学习框架  框架和类库的区别  MVC模式与MVVM模式的区别（补充说明） 具体内容请点击展开全文">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/assets/img/mvvm_image.jpg">
+<meta property="og:updated_time" content="2019-09-23T14:28:20.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Vue学习01">
+<meta name="twitter:description" content="Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。  Vue框架的基本介绍 什么是Vue.js  为什么要学习框架  框架和类库的区别  MVC模式与MVVM模式的区别（补充说明） 具体内容请点击展开全文">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/mvvm_image.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -132,36 +139,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue学习01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/23/Vue学习01/" class="archive-article-date">
-  	<time datetime="2019-09-23T12:24:02.630Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/23/Vue学习01/">Vue学习01</a>
+    <h1 class="article-title" itemprop="name">
+      Vue学习01
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/09/23/Vue学习01/" class="archive-article-date">
+  	<time datetime="2019-09-23T12:24:02.630Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue</a> (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。</p>
+</blockquote>
+<h2 id="Vue框架的基本介绍"><a href="#Vue框架的基本介绍" class="headerlink" title="Vue框架的基本介绍"></a>Vue框架的基本介绍</h2><ul>
+<li><p>什么是Vue.js</p>
+</li>
+<li><p>为什么要学习框架</p>
+</li>
+<li><p>框架和类库的区别</p>
+</li>
+<li><p>MVC模式与MVVM模式的区别（补充说明）</p>
+<p><strong>具体内容请点击展开全文</strong></p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h4 id="什么是Vue-js"><a href="#什么是Vue-js" class="headerlink" title="什么是Vue.js"></a>什么是Vue.js</h4><ul>
+<li>Vue.js 是前端的<strong>三大主流框架之一</strong>，其他主流框架还有Angular.js、React.js。</li>
+<li>Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。</li>
+<li>Vue 有配套的第三方类库，可以整合起来做大型项目的开发，并且Vue 也完全能够为复杂的单页应用提供驱动。</li>
+<li>Vue 将前端狗从繁杂的DOM操作中解脱出来，使得程序员可以有更多的时间关注业务逻辑的编写。</li>
+</ul>
+<h4 id="为什么要学习框架"><a href="#为什么要学习框架" class="headerlink" title="为什么要学习框架"></a>为什么要学习框架</h4><ul>
+<li>前端发展历程：原生JS -&gt; JQuery等类库 -&gt; 前端模版引擎 -&gt; 前端框架（如Vue.js等）。</li>
+<li>随着公司需求的增加，开发成本不断提高，企业为了提高开发效率而选择使用框架。</li>
+<li>个人学习框架，可以丰富自己的技能树，提高自己的开发效率，增强自己的就业竞争力。<ul>
+<li>人无我有，人有我优。</li>
+<li>多利用平时闲余时间。</li>
+</ul>
+</li>
+</ul>
+<h4 id="框架和类库的区别"><a href="#框架和类库的区别" class="headerlink" title="框架和类库的区别"></a>框架和类库的区别</h4><ul>
+<li>框架：框架是一套完整的项目解决方案，它对项目的侵入性比较强，如果项目框架需要更改，则需要重构整个项目，代价较高。</li>
+<li>类库：类库（插件）为应用提供某一个小功能，它对项目的侵入性较弱，如果某个类库无法完成当前的需求，可以轻松的切换到其他的类库以实现需求。</li>
+</ul>
+<h4 id="MVC模式与MVVM模式的区别"><a href="#MVC模式与MVVM模式的区别" class="headerlink" title="MVC模式与MVVM模式的区别"></a>MVC模式与MVVM模式的区别</h4><ul>
+<li>MVC是后端分层开发的概念（Model层、View层和Controller层）。</li>
+<li>MVVM是前端视图层（后端的View层）的概念，MVVM把视图层分为了三个部分：Model层、View层和ViewModel层。</li>
+<li>MVC与MVVM具体图解见下图所示：</li>
+</ul>
+<p><img src="/assets/img/mvvm_image.jpg" alt="MVVM模式图解"></p>
+<h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持！！！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -173,57 +250,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/23/Vue学习01/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/13/写博客优势/" class="archive-article-date">
-  	<time datetime="2019-07-13T03:42:53.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/13/写博客优势/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iT行业的在校生为什么要写技术博客？</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/13/写博客优势/">iT行业的在校生为什么要写技术博客？</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -246,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
