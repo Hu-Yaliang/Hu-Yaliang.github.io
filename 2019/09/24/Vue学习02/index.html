@@ -8,18 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Vue学习02 | 【胡雅亮的后花园】</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue基础语法讲解 基本的Vue代码结构 数据渲染： 插值表达式 v-text v-html   特殊细节   具体内容请点击阅读全文">
+  <meta name="description" content="Vue基础语法讲解（一） 基本的Vue代码结构 数据渲染： 插值表达式 v-text v-html   特殊细节   具体内容请点击阅读全文">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue学习02">
 <meta property="og:url" content="http://yoursite.com/2019/09/24/Vue学习02/index.html">
 <meta property="og:site_name" content="【胡雅亮的后花园】">
-<meta property="og:description" content="Vue基础语法讲解 基本的Vue代码结构 数据渲染： 插值表达式 v-text v-html   特殊细节   具体内容请点击阅读全文">
+<meta property="og:description" content="Vue基础语法讲解（一） 基本的Vue代码结构 数据渲染： 插值表达式 v-text v-html   特殊细节   具体内容请点击阅读全文">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-24T09:56:23.656Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/hello_world.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/hello_world_i.png">
+<meta property="og:updated_time" content="2019-09-24T12:19:28.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue学习02">
-<meta name="twitter:description" content="Vue基础语法讲解 基本的Vue代码结构 数据渲染： 插值表达式 v-text v-html   特殊细节   具体内容请点击阅读全文">
+<meta name="twitter:description" content="Vue基础语法讲解（一） 基本的Vue代码结构 数据渲染： 插值表达式 v-text v-html   特殊细节   具体内容请点击阅读全文">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/hello_world.jpg">
   
     <link rel="alternative" href="/atom.xml" title="【胡雅亮的后花园】" type="application/atom+xml">
   
@@ -157,7 +160,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Vue基础语法讲解"><a href="#Vue基础语法讲解" class="headerlink" title="Vue基础语法讲解"></a>Vue基础语法讲解</h2><ul>
+        <h2 id="Vue基础语法讲解（一）"><a href="#Vue基础语法讲解（一）" class="headerlink" title="Vue基础语法讲解（一）"></a>Vue基础语法讲解（一）</h2><ul>
 <li>基本的Vue代码结构</li>
 <li>数据渲染：<ul>
 <li>插值表达式</li>
@@ -170,7 +173,31 @@
 <p> <strong>具体内容请点击阅读全文</strong></p>
  <a id="more"></a>
 
-<h4 id="基本的Vue代码结构"><a href="#基本的Vue代码结构" class="headerlink" title="基本的Vue代码结构"></a>基本的Vue代码结构</h4><h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
+<h4 id="Vue代码基本结构"><a href="#Vue代码基本结构" class="headerlink" title="Vue代码基本结构"></a>Vue代码基本结构</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Vue代码基本结构<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 这里引入了vue.js的开发环境版本 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 挂载点 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">			</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">		<span class="comment">// Vue应用通过new Vue创建Vue实例对象</span></span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">			<span class="comment">// el可看作element的缩写，表示该Vue实例挂载到了id为app的div元素上，由此接管这片区域的相关操作</span></span></span><br><span class="line"><span class="actionscript">			el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="actionscript">			<span class="comment">// data中层存放该区域的所有数据</span></span></span><br><span class="line">			data: &#123;</span><br><span class="line"><span class="actionscript">				content: <span class="string">'hello world'</span>,</span></span><br><span class="line"><span class="handlebars"><span class="xml">				message: '<span class="tag">&lt;<span class="name">i</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">i</span>&gt;</span>'</span></span></span><br><span class="line">			&#125;,</span><br><span class="line"><span class="actionscript">			<span class="comment">// methods中存放操作该区域的方法</span></span></span><br><span class="line">			methods: &#123;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数据渲染"><a href="#数据渲染" class="headerlink" title="数据渲染"></a>数据渲染</h4><ul>
+<li>插值表达式<br>Vue中数据绑定最常见的形式就是使用“Mustache“语法（双大括号）的文本插值：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;content&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="/assets/img/hello_world.jpg" alt="插值表达式效果"></p>
+<ul>
+<li><p>v-text<br>v-text的效果和插值表达式相同，语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-text=&quot;content&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-html<br>上述两种方式会将数据解释为普通文本，而非HTML代码，而v-html方式会将数据先进行html语法解释后再输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-html=&quot;message&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="/assets/img/hello_world_i.png" alt="v-html效果"></p>
+<h4 id="特殊细节"><a href="#特殊细节" class="headerlink" title="特殊细节"></a>特殊细节</h4><ol>
+<li>在页面加载较慢的情况下，插值表达式会先显示<strong>content</strong>（花括号打不出来），而v-text和v-html不会。</li>
+<li>如果p标签内本身有内容，v-text和v-html会将其覆盖。</li>
+<li>插值表达式、v-text、v-html中的数据实际上是js表达式，都可以进行拼接字符串等操作。</li>
+<li><strong>绝不要</strong>对用户提供的内容用html插值渲染，它很容易导致<a href="https://baike.baidu.com/item/XSS攻击/954065?fr=aladdin" target="_blank" rel="noopener">XSS攻击</a>。</li>
+</ol>
+<h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
       
 
       
