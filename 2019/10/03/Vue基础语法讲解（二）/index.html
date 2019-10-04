@@ -6,19 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | 【胡雅亮的后花园】</title>
+  <title>Vue基础语法讲解（二） | 【胡雅亮的后花园】</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="【胡雅亮的后花园】">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+  <meta name="description" content="内容概览 v-bind实现单向数据绑定 v-on实现事件绑定 v-model实现双向数据绑定 v-for实现元素循环 v-if与v-show实现元素显示  具体内容请点击阅读全文">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue基础语法讲解（二）">
+<meta property="og:url" content="http://yoursite.com/2019/10/03/Vue基础语法讲解（二）/index.html">
 <meta property="og:site_name" content="【胡雅亮的后花园】">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="内容概览 v-bind实现单向数据绑定 v-on实现事件绑定 v-model实现双向数据绑定 v-for实现元素循环 v-if与v-show实现元素显示  具体内容请点击阅读全文">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/assets/img/bind.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/initial-content.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/change-content.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/initial-input.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/change-input.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/change-input-data.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/console-change.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/img/console-change-input.jpg">
+<meta property="og:updated_time" content="2019-10-04T07:22:46.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【胡雅亮的后花园】">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="Vue基础语法讲解（二）">
+<meta name="twitter:description" content="内容概览 v-bind实现单向数据绑定 v-on实现事件绑定 v-model实现双向数据绑定 v-for实现元素循环 v-if与v-show实现元素显示  具体内容请点击阅读全文">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/bind.jpg">
   
     <link rel="alternative" href="/atom.xml" title="【胡雅亮的后花园】" type="application/atom+xml">
   
@@ -140,60 +150,184 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue基础语法讲解（二）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/13/iT行业的在校生为什么要写技术博客？/" class="archive-article-date">
-  	<time datetime="2019-07-13T03:42:53.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/13/iT行业的在校生为什么要写技术博客？/">iT行业的在校生为什么要写技术博客？</a>
+    <h1 class="article-title" itemprop="name">
+      Vue基础语法讲解（二）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/03/Vue基础语法讲解（二）/" class="archive-article-date">
+  	<time datetime="2019-10-03T08:07:37.748Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="内容概览"><a href="#内容概览" class="headerlink" title="内容概览"></a>内容概览</h2><ul>
+<li>v-bind实现单向数据绑定</li>
+<li>v-on实现事件绑定</li>
+<li>v-model实现双向数据绑定</li>
+<li>v-for实现元素循环</li>
+<li>v-if与v-show实现元素显示</li>
+</ul>
+<p><strong>具体内容请点击阅读全文</strong></p>
+<a id="more"></a>
+
+<h4 id="v-bind实现单向数据绑定"><a href="#v-bind实现单向数据绑定" class="headerlink" title="v-bind实现单向数据绑定"></a>v-bind实现单向数据绑定</h4><p>v-bind指令可以实现元素属性与Vue实例中数据的动态绑定，当实例中的数据发生变化，元素的属性也会跟着变化<br>代码示例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:title</span>=<span class="string">"myTitle"</span>&gt;</span>鼠标悬停查看此处动态绑定信息<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">"#app"</span>,</span><br><span class="line">	data: &#123;</span><br><span class="line">		myTitle: <span class="string">"这是vue动态绑定信息"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>实际效果如下：<br><img src="/assets/img/bind.jpg" alt="bind"><br><em>ps:“v-bind:title”可简写为“:title“</em></p>
+<h4 id="v-on实现事件绑定"><a href="#v-on实现事件绑定" class="headerlink" title="v-on实现事件绑定"></a>v-on实现事件绑定</h4><p>v-on指令可为元素添加事件监听器，通过它调用Vue实例中定义的方法<br>代码示例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;content&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"handleBtnClick"</span>&gt;</span>点击改变上述信息<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">"#app"</span>,</span><br><span class="line">	data: &#123;</span><br><span class="line">		content: <span class="string">"初始信息"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">		handleBtnClick () &#123;</span><br><span class="line">			<span class="keyword">this</span>.content = <span class="string">"信息已改变"</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>初始状态如下：<br><img src="/assets/img/initial-content.jpg" alt="初始信息"><br>点击按钮后：<br><img src="/assets/img/change-content.jpg" alt="初始信息"><br><em>ps:“v-on:click”可简写为“@click“</em></p>
+<h4 id="v-model实现双向数据绑定"><a href="#v-model实现双向数据绑定" class="headerlink" title="v-model实现双向数据绑定"></a>v-model实现双向数据绑定</h4><p>v-model指令可以实现表单输入和应用状态的双向绑定，表单输入数据变化则实例中数据也发生变化，实例中数据变化则表单数据也发生变化<br>代码示例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">"#app"</span>,</span><br><span class="line">	data: &#123;</span><br><span class="line">		content: <span class="string">"初始信息"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>初始表单数据如下：<br><img src="/assets/img/initial-input.jpg" alt="初始表单"><br>示例一、改变表单数据：<br><img src="/assets/img/change-input.jpg" alt="改变表单数据"><br><img src="/assets/img/change-input-data.jpg" alt="改变表单后实例数据"><br>示例二、从控制台改变实例数据：<br><img src="/assets/img/console-change.jpg" alt="控制台改变数据"><br><img src="/assets/img/console-change-input.jpg" alt="改变数据后表单"></p>
+<h4 id="v-for实现元素循环"><a href="#v-for实现元素循环" class="headerlink" title="v-for实现元素循环"></a>v-for实现元素循环</h4><h4 id="v-if与v-show实现元素显示"><a href="#v-if与v-show实现元素显示" class="headerlink" title="v-if与v-show实现元素显示"></a>v-if与v-show实现元素显示</h4><p>v-if与v-show都能够实现选定元素的显示与否，但是它们的用处有所不同。</p>
+<ul>
+<li>区别：<ul>
+<li>v-if是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建</li>
+<li>v-if是惰性的，如果初始渲染时条件为假，则什么也不渲染————直到条件变为真，才渲染条件块</li>
+<li>v-show不管初始条件为真为假，元素都要被渲染，它知识简单的基于display的属性值进行切换</li>
+<li>v-if有更高的切换开销，v-show有更高的初始渲染开销</li>
+</ul>
+</li>
+<li>优缺点：如果条件块需要非常频繁的切换，则使用v-show较好；如果在运行时条件很少改变，则使用v-if较好</li>
+</ul>
+<h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/03/Vue基础语法讲解（二）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/01/前端组摸底试题参考答案/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端组摸底试题参考答案</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -227,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
