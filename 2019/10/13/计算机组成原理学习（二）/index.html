@@ -17,7 +17,7 @@
 <meta property="og:description" content="内容概览 数据和信息 数值数据的表示 非数值数据的表示  具体内容请点击阅读全文">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/assets/img/binary-conversion.jpg">
-<meta property="og:updated_time" content="2019-10-13T04:49:12.979Z">
+<meta property="og:updated_time" content="2019-10-14T13:30:31.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理学习（二）">
 <meta name="twitter:description" content="内容概览 数据和信息 数值数据的表示 非数值数据的表示  具体内容请点击阅读全文">
@@ -187,8 +187,67 @@
 <ol>
 <li>基数概念：基本数码的个数，用R表示</li>
 <li>位权：个位十位等这些位置上的数表示的数值大小不同</li>
-<li>进制转换见下图<br><img src="/assets/img/binary-conversion.jpg" alt="进制转换"></li>
+<li>进制转换见下图<br><img src="/assets/img/binary-conversion.jpg" alt="进制转换"><br><em>ps:计算机中主要用二进制运算，因为二进制便于物理元件实现，运算规则简单，还便于逻辑运算</em></li>
 </ol>
+<p>数的符号表示</p>
+<ul>
+<li>无符号数常用来表示存储器单元的地址</li>
+<li>有符号数：一般是最高位“0”表示“+”号，“1”表示“-”号，有符号数可以用原码、补码、反码三种形式表示<ul>
+<li>原码：最高位为符号位，其余位为数的绝对值（乘除运算方便，0有两种表示方法）</li>
+<li>补码：最高位不变，其余位按位取反再加一</li>
+<li>反码：最高位不变，其余位按位取反</li>
+<li>正数的三种码相同</li>
+</ul>
+</li>
+</ul>
+<p>数的小数点表示</p>
+<ul>
+<li>定点表示法<ul>
+<li>小数的小数点放在有效数字的前面符号的后面（定点小数）</li>
+<li>整数的小数点放在有效数字的末尾（定点整数）</li>
+<li>小数点以隐含的方式表示，不占有效的数据位（字长一定的时，数的表示范围最大）</li>
+</ul>
+</li>
+<li>浮点表示法（适用数既有整数部分又有小数部分）<ul>
+<li>小数点的位可以左右移动</li>
+<li>IEEE标准规定的三种浮点数见下表</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">种类</th>
+<th align="center">数符位数</th>
+<th align="center">阶码位数</th>
+<th align="center">尾数位数</th>
+<th align="center">总位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">短实数</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">23</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">长实数</td>
+<td align="center">1</td>
+<td align="center">11</td>
+<td align="center">52</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">临时实数</td>
+<td align="center">1</td>
+<td align="center">15</td>
+<td align="center">64</td>
+<td align="center">80</td>
+</tr>
+</tbody></table>
+<p>十进制数据表示：1、有权吗（8421码等）2、无权码（格雷码）</p>
+<h4 id="非数值数据的表示"><a href="#非数值数据的表示" class="headerlink" title="非数值数据的表示"></a>非数值数据的表示</h4><p>非数值数据采用字符编码的方式转化为0、1组成的编码（ASCII等）</p>
 <h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
       
 
@@ -415,19 +474,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">易班前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
