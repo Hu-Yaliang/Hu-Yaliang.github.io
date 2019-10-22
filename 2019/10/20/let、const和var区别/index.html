@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | 【胡雅亮的后花园】</title>
+  <title>let、const和var区别 | 【胡雅亮的后花园】</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="【胡雅亮的后花园】">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="本文主要总结一下ES6中在定义变量时let、const和var区别。 具体内容请点击阅读全文">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="let、const和var区别">
+<meta property="og:url" content="http://yoursite.com/2019/10/20/let、const和var区别/index.html">
 <meta property="og:site_name" content="【胡雅亮的后花园】">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="本文主要总结一下ES6中在定义变量时let、const和var区别。 具体内容请点击阅读全文">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/assets/img/var1.png">
+<meta property="og:updated_time" content="2019-10-22T12:38:01.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【胡雅亮的后花园】">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="let、const和var区别">
+<meta name="twitter:description" content="本文主要总结一下ES6中在定义变量时let、const和var区别。 具体内容请点击阅读全文">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/var1.png">
   
     <link rel="alternative" href="/atom.xml" title="【胡雅亮的后花园】" type="application/atom+xml">
   
@@ -140,250 +143,181 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-let、const和var区别" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      let、const和var区别
+    </h1>
+  
+
+        
+        <a href="/2019/10/20/let、const和var区别/" class="archive-article-date">
+  	<time datetime="2019-10-20T15:05:57.906Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文主要总结一下ES6中在定义变量时let、const和var区别。</p>
+<p><strong>具体内容请点击阅读全文</strong></p>
+<a id="more"></a>
+
+<h4 id="用传统的var方式来定义变量有哪些缺陷"><a href="#用传统的var方式来定义变量有哪些缺陷" class="headerlink" title="用传统的var方式来定义变量有哪些缺陷"></a>用传统的var方式来定义变量有哪些缺陷</h4><ol>
+<li>var方式定义的变量作用域为整个函数体，即变量没有自己的块级作用域，示例如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;<span class="number">5</span> ; i++ )&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="string">'a'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><img src="/assets/img/var1.png" alt="示例效果"><br>通过上图就可以发现，我明明已经跳出循环再输出控制台了，却还是可以访问到循环内部的变量。这是因为上述变量a和i泄漏成为了全局变量，这就可能会导致变量因为重复使用而产生不可预计的bug。</p>
+<ol start="2">
+<li>循环内变量过度共享，示例如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(i);</span><br><span class="line">	&#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>如果单纯只看代码，很多人都会认为控制台按顺序输出了1、2、3，其实不然，var定义变量的过度共享导致for循环执行过快从而延时器在for循环结束后才开始执行，所以最终控制台输出了三次3。</p>
+<ol start="3">
+<li>内层变量可能因为变量提升而覆盖外层变量。</li>
+</ol>
+<p>为了解决上述缺陷，ES6中就引入了let定义变量关键字</p>
+<h4 id="let是var的优化版（与var区别）"><a href="#let是var的优化版（与var区别）" class="headerlink" title="let是var的优化版（与var区别）"></a>let是var的优化版（与var区别）</h4><ol>
+<li>let声明的变量是具有块级作用域的，每一个变量只在定义时所在的大括号中有效，在外部是无法访问这些变量。</li>
+<li>let声明的全局变量并不是全局对象的属性，它无法通过window.变量名的方式来访问，它存在于一个全局对象包裹的一个不可见的块作用域。</li>
+<li>用let定义的变量来控制循环次数可以保证各个循环间不会因为变量名相同而产生bug。</li>
+<li>用var定义的变量可以重复定义，也可以先定义不赋值，系统会默认赋值undefined，而用let定义的变量只能够定义一次，如果不赋值，默认赋值undefined。</li>
+<li>var存在变量提升特性，即var定义的变量可以先使用后定义，而let定义的变量必须先定义后使用。</li>
+<li>其他的方面，var与let作用基本一致。</li>
+</ol>
+<h4 id="const变量的出现"><a href="#const变量的出现" class="headerlink" title="const变量的出现"></a>const变量的出现</h4><p>const在ES6中引入第三个声明类关键词，它主要用来定义常量，它的使用有一下几个注意点：</p>
+<ol>
+<li>只定义不赋值会报错(Missing initializer in const declaration)</li>
+<li>重复声明变量(Identifier ‘a’ has already been declared)</li>
+<li>给const声明变量重复赋值(Assignment to constant variable)</li>
+<li>const声明的引用类型数据虽然不可以改变引用变量指向的地址，但可以通过改变其中的属性间接改变变量。</li>
+</ol>
+<h4 id="暂时性死区-TDZ"><a href="#暂时性死区-TDZ" class="headerlink" title="暂时性死区(TDZ)"></a>暂时性死区(TDZ)</h4><p>只要块级作用域内存在let、const命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。简单来说就是在代码块内用let、const定义的变量都不可以提前使用，即使存在同名全局变量。在这种情况下typeof操作可能会存在报错，所以程序员一定要养成先定义后使用的习惯。</p>
+<h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/29/Vue移动端项目初始化/" class="archive-article-date">
-  	<time datetime="2019-09-29T08:34:30.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/29/Vue移动端项目初始化/">Vue移动端项目初始化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/20/let、const和var区别/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/27/前端组2019下半学期授课计划/" class="archive-article-date">
-  	<time datetime="2019-09-27T02:52:11.598Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/20/前端组2019下半学期授课计划（第二版）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端组2019下半学期授课计划（第二版）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/27/前端组2019下半学期授课计划/">前端组2019下半学期授课计划</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">易班前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/26/移动端顶部底部实现固定/" class="archive-article-date">
-  	<time datetime="2019-09-26T14:06:24.579Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/26/移动端顶部底部实现固定/">移动端顶部底部实现固定</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/24/Verilog实现仪用数字显示调节器/" class="archive-article-date">
-  	<time datetime="2019-09-23T17:55:00.936Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/24/Verilog实现仪用数字显示调节器/">Verilog实现仪用数字显示调节器</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Verilog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/24/Vue基础语法讲解（一）/" class="archive-article-date">
-  	<time datetime="2019-09-23T17:52:46.469Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/24/Vue基础语法讲解（一）/">Vue基础语法讲解（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/23/Vue框架的基本介绍/" class="archive-article-date">
-  	<time datetime="2019-09-23T12:24:02.630Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/23/Vue框架的基本介绍/">Vue框架的基本介绍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -417,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
