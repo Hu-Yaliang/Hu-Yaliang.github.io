@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | 【胡雅亮的后花园】</title>
+  <title>栅格系统 | 【胡雅亮的后花园】</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="【胡雅亮的后花园】">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/page/2/index.html">
+  <meta name="description" content="内容概览 了解栅格 栅格容器 栅格元素 bootstrap 前端开发框架  具体内容请点击阅读全文">
+<meta name="keywords" content="Css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栅格系统">
+<meta property="og:url" content="http://yoursite.com/2019/10/26/栅格系统/index.html">
 <meta property="og:site_name" content="【胡雅亮的后花园】">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="内容概览 了解栅格 栅格容器 栅格元素 bootstrap 前端开发框架  具体内容请点击阅读全文">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/assets/img/grid.png">
+<meta property="og:updated_time" content="2019-10-26T15:59:43.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【胡雅亮的后花园】">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="栅格系统">
+<meta name="twitter:description" content="内容概览 了解栅格 栅格容器 栅格元素 bootstrap 前端开发框架  具体内容请点击阅读全文">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/grid.png">
   
     <link rel="alternative" href="/atom.xml" title="【胡雅亮的后花园】" type="application/atom+xml">
   
@@ -140,101 +143,293 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-栅格系统" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/Vue基础语法讲解（二）/" class="archive-article-date">
-  	<time datetime="2019-10-03T08:07:37.748Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/Vue基础语法讲解（二）/">Vue基础语法讲解（二）</a>
+    <h1 class="article-title" itemprop="name">
+      栅格系统
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/26/栅格系统/" class="archive-article-date">
+  	<time datetime="2019-10-26T09:04:13.931Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="内容概览"><a href="#内容概览" class="headerlink" title="内容概览"></a>内容概览</h2><ul>
+<li>了解栅格</li>
+<li>栅格容器</li>
+<li>栅格元素</li>
+<li>bootstrap 前端开发框架</li>
+</ul>
+<p><strong>具体内容请点击阅读全文</strong></p>
+<a id="more"></a>
+
+<h4 id="了解栅格"><a href="#了解栅格" class="headerlink" title="了解栅格"></a>了解栅格</h4><blockquote>
+<p>网页栅格系统是从平面栅格系统中发展而来的。对于网页设计来说，栅格系统的使用，不仅可以让网页的信息呈现更加美观易读，更具可用性。而且，对于前端开发来说，网页将更加的灵活与规范。栅格系统就是以规则的网格阵列来指导和规范网页中的版面布局以及信息分布。</p>
+</blockquote>
+<p>栅格系统与弹性盒模型有相似之处，它们都是由父容器包含多个子元素来使用。<br><em>兼容性：CSS中栅格系统是近几年才产生的新特性，在实际使用中要慎用。</em></p>
+<h4 id="栅格容器"><a href="#栅格容器" class="headerlink" title="栅格容器"></a>栅格容器</h4><p>栅格容器里面包含着子元素，使用 display:grid 或 display:inline-grid 属性声明为栅格容器。</p>
+<p>栅格的使用效果其实类似于表格，只不过它比表格更加强大，它可以用以下属性将栅格容器分割成一块块的网格，子元素默认自动填满一个网格。<br>grid-template-rows 属性：控制栅格容器的行数及行宽。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性值</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">100px 80px（固定宽度）</td>
+<td align="center">将容器按100px，80px分成两行，容器高度大于180px时容器纵向留白，容器高度小于180px时容器高度不变，栅格超出容器空间</td>
+</tr>
+<tr>
+<td align="center">50% 25% 25%（百分比）</td>
+<td align="center">将容器按50%，25%，25%分成三行，当设置百分比和小于100%时容器纵向留白，小于100%时容器高度不变，栅格超出容器空间</td>
+</tr>
+<tr>
+<td align="center">repeat(2, 50%)（重复设置）</td>
+<td align="center">将容器按50%，50%分成两行，当设置百分比和小于100%时容器纵向留白，小于100%时容器高度不变，栅格超出容器空间</td>
+</tr>
+<tr>
+<td align="center">repeat(2, 100px 50px)</td>
+<td align="center">将容器按100px，50px,100px,50px分成四行，当设置百分比和小于100%时容器纵向留白，小于100%时容器高度不变，栅格超出容器空间</td>
+</tr>
+<tr>
+<td align="center">repeat(auto-fill, 100px)</td>
+<td align="center">将容器按100px高度分行，不足100px的部分留白</td>
+</tr>
+<tr>
+<td align="center">100px 1fr 2fr</td>
+<td align="center">容器第一行高度设置为100px，剩余行高分成(1+2)等份，第二行占1份，第三行占2份</td>
+</tr>
+<tr>
+<td align="center">repeat(2, 1fr 2fr)</td>
+<td align="center">将容器高度分成[2x(1+2)]=6份，一三行占一份，二四行占2份</td>
+</tr>
+</tbody></table>
+<p>grid-template-columns 属性：控制栅格容器每行的列数及列宽，属性值同grid-template-rows 属性，效果也大致相同。<br>使用 grid-template 同时声明 grid-template-rows、grid-template-columns 属性，grid-template: rows设置 / columns 设置。<br>使用 minmax() 方法可以设置取值范围，如 grid-template-rows: 100px minmax(100px, 200px) 可设置第二行行高在100px到200px之间。 </p>
+<p>栅格间距：使用 row-gap 设置栅格行间距，使用 row-column 设置栅格列间距，使用 gap 属性可以同时定义行、列间距，如果间距一样可以只设置一个值。</p>
+<p>栅格命名：栅格线可以使用命名与编号找到，方便控制指定栅格，或将内容添加到指定栅格中。可以为每个栅格独立命名来进行调用。<br>示例：grid-template-rows: [r1-start] 100px [r1-end r2-start] 100px [r2-end]; 为三条行栅格线命名。列栅格线命名也相同。</p>
+<p>栅格区域声明：区域是由多个单元格构成，使用 grid-template-areas 可以定义栅格区域，并且栅格区域必须是矩形的。<br>示例如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt;</span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">	    <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">	    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">	    <span class="attribute">display</span>: grid;</span><br><span class="line">	    <span class="attribute">grid-template-rows</span>: <span class="number">80px</span> <span class="number">1</span>fr <span class="number">50px</span>;</span><br><span class="line">	    <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">1</span>fr <span class="number">60px</span>;</span><br><span class="line">	    <span class="attribute">grid-template-areas</span>: <span class="string">"header header  header"</span> <span class="string">"nav main aside"</span> <span class="string">"footer footer footer"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">main</span> &#123;</span><br><span class="line">		<span class="comment">/* 完整的写法，推荐使用下面的简写方式*/</span></span><br><span class="line">		<span class="comment">/* grid-area: main-start/main-start/main-end/main-end; */</span></span><br><span class="line">	    <span class="attribute">grid-area</span>: main;</span><br><span class="line">	    <span class="attribute">background</span>: grey;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">header</span> &#123;</span><br><span class="line">		<span class="attribute">grid-area</span>: header;</span><br><span class="line">	    <span class="attribute">background</span>: green;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">nav</span> &#123;</span><br><span class="line">		<span class="attribute">grid-area</span>: nav;</span><br><span class="line">	    <span class="attribute">background</span>: orange;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">aside</span> &#123;</span><br><span class="line">	    <span class="attribute">grid-area</span>: aside;</span><br><span class="line">	    <span class="attribute">background</span>: red;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">footer</span> &#123;</span><br><span class="line">	    <span class="attribute">grid-area</span>: footer;</span><br><span class="line">	    <span class="attribute">background</span>: blue;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/img/grid.png" alt="grid-area"></p>
+<p>栅格流动：在容器中设置 grid-auto-flow 属性可以改变单元流动方式。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性值</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">row</td>
+<td align="center">按行排列</td>
+</tr>
+<tr>
+<td align="center">column</td>
+<td align="center">按列排列</td>
+</tr>
+</tbody></table>
+<p>栅格对齐：可以通过属性来定义栅格的对齐方式，可用值包括 start、end、center、stretch、space-between、space-evenly、space-around。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">align-items</td>
+<td align="center">栅格内所有元素的垂直排列方式</td>
+</tr>
+<tr>
+<td align="center">justify-items</td>
+<td align="center">栅格内所有元素的横向排列方式</td>
+</tr>
+<tr>
+<td align="center">justify-content</td>
+<td align="center">所有栅格在容器中的水平对齐方式</td>
+</tr>
+<tr>
+<td align="center">align-content</td>
+<td align="center">所有栅格在容器中的垂直对齐方式</td>
+</tr>
+<tr>
+<td align="center">align-self</td>
+<td align="center">元素在栅格中垂直对齐方式</td>
+</tr>
+<tr>
+<td align="center">justify-self</td>
+<td align="center">元素在栅格中水平对齐方式</td>
+</tr>
+</tbody></table>
+<p>组合简写：</p>
+<ul>
+<li>place-content 用于控制栅格的对齐方式，语法结构如下：place-content: align-content justify-content;</li>
+<li>place-items 控制所有元素的对齐方式，语法结构如下：place-items: align-items justify-items;</li>
+<li>place-self 控制单个元素的对齐方式，语法结构如下：place-self: align-self justify-self;</li>
+</ul>
+<h4 id="栅格元素"><a href="#栅格元素" class="headerlink" title="栅格元素"></a>栅格元素</h4><p>元素定位既可以根据栅格线初始编号也可以根据栅格线自定义的命名找到对应的栅格。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">grid-row-start</td>
+<td align="center">定义行开始栅格线</td>
+</tr>
+<tr>
+<td align="center">grid-row-end</td>
+<td align="center">定义行结束栅格线</td>
+</tr>
+<tr>
+<td align="center">grid-column-start</td>
+<td align="center">定义列开始栅格线</td>
+</tr>
+<tr>
+<td align="center">grid-column-end</td>
+<td align="center">定义列结束栅格线</td>
+</tr>
+</tbody></table>
+<p>示例：grid-row-start: 2; 表示元素行开始在第二条行栅格线。<br>grid-row-start: r1-end; 表示元素行开始在名为 r1-end 的栅格线。</p>
+<p>对于重复设置的栅格系统会自动命名，例如 grid-template-rows: repeat(3, [r-start] 100px [r-end]); 设置元素开始栅格线为第二行的开始栅格线 grid-row-start: r-start 2;</p>
+<p>元素也可以根据相对偏移量来选定对应的网格，使用 span 可以设置移动单元格数量，数值只能为正数。<br>示例：grid-row-start: 2; 和 grid-row-end: span 2; 表示从第2个行栅格线开始向下充满两行。</p>
+<p>设置元素简写模式：可以使用 grid-row 设置行开始栅格线，使用 grid-column 设置结束栅格线。例如 grid-column: 1/2; 表示元素占第一列。grid-area 更加简洁，它同时对 grid-row 与 grid-column 属性组合声明，语法结构为 grid-area: grid-row-start/grid-column-start/grid-row-end/grid-column-end。</p>
+<h4 id="bootstrap-前端开发框架"><a href="#bootstrap-前端开发框架" class="headerlink" title="bootstrap 前端开发框架"></a>bootstrap 前端开发框架</h4><blockquote>
+<p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。</p>
+</blockquote>
+<p>具体内容请访问<a href="https://www.bootcss.com" target="_blank" rel="noopener">bootstrap 官网</a>。</p>
+<h4 id="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"><a href="#感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。" class="headerlink" title="感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。"></a>感谢朋友们的阅读，希望本文能给朋友们带来一点小小的帮助。</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/26/栅格系统/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/01/前端组摸底试题参考答案/" class="archive-article-date">
-  	<time datetime="2019-10-01T03:57:58.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/25/弹性盒子/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">弹性盒子</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/前端组摸底试题参考答案/">前端组摸底试题参考答案</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">易班前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/10/">&laquo; Prev</a><a class="page-number" href="/archives/2019/10/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
   
 
 
@@ -269,8 +464,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
